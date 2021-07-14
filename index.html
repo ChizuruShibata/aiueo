@@ -6,20 +6,26 @@
     <style>
         /*CSSのエリア*/
 
-        @import url(mobile.css) screen and(max-width: 568px);
+        @media  screen and(max-width: 568px){
         /*スマホ縦*/
-
-        @import url(mobile2.css) screen and(max-width: 896px) and(orientation:landscape);
+        body{background-color: aqua;}
+        }
+        @media screen and(max-width: 896px) and(orientation:landscape){
         /*スマホ横*/
-
-        @import url(tablet.css) screen and(max-width: 1024px);
+        body{background-color: red;}
+        }
+        @media screen and(max-width: 1024px){
         /*タブレット縦*/
-
-        @import url(tablet2.css) screen and(max-width: 1024px)and(orientation:landscape);
-        /*タブレット横*/
-
-        @import url(tablet2.css) screen and(min-width: 1024px);
+        body{background-color: yellow;}
+        }
+        @media screen and(max-width: 1024px)and(orientation:landscape){
+        /*タブレット横*/ 
+        body{background-color: green;}
+        }
+        @media screen and(min-width: 1024px){
         /*パソコン*/
+        body{background-color: green;}
+        }
 
     </style>
 </head>
