@@ -4,8 +4,6 @@ body{
     background-color: aqua;
 }
 
-.box1{
-    width:100%;
-    height:auto;
-    font-size: medium;
+p{
+    color: red;
 }
