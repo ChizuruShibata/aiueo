@@ -6,58 +6,33 @@
     <title>メディアクエリを理解する</title>
     <style>
         /*CSSのエリア*/
+        /*モバイルファースト*/
 
-        @media  screen and(max-width: 568px)and(orientation:portrait){
+        @media  screen and(max-width: 480px){
         /*スマホ縦*/
         body{background-color: aqua;}
-        #box{
-                width:100%;
-                height:auto;
-                font-size:small;
-                }
+        
         }
         @media screen and(max-width: 896px) and(orientation:landscape){
         /*スマホ横*/
         body{background-color: red;}
-        #box{
-                    width:100%;
-                    height:auto;
-                    font-size: medium;
-                }
+        
         }
-        @media screen and(max-width: 1024px)and(orientation:portrait){
+        @media screen and(max-width: 1024px){
         /*タブレット縦*/
         body{background-color: yellow;}
-        #box{
-                    width:100%;
-                    height:auto;
-                    font-size: medium;
-                }
+       
         }
-        @media screen and(max-width: 1024px)and(orientation:landscape){
-        /*タブレット横*/ 
-        body{background-color: green;}
-        #box{
-                    width:100%;
-                    height:auto;
-                    font-size: medium;
-                }
-        }
-        @media screen and(min-width: 1024px){
-        /*パソコン*/
-        body{background-color: green;}
-        #box{
-                    width:100%;
-                    height:auto;
-                    font-size: medium;
-                }
-        }
+        
+        /*タブレット横とパソコン*/
+        body{background-color: pink;}
+
+
 
     </style>
 </head>
 <body>
     <!--コンテンツのエリア-->
-    <p id="box"></p>
     <p>たかし：こんにちは。今日は良い天気ですね。</p>
     <p>まさし：こんにちは。本当ですね。少し暑すぎるくらいです。</p>
     <p>ひさし：このくらいで暑いだなんて…。僕は昔インドのデリーに住んでいたことがあるんだけど、あそこの夏は死ぬほど暑いんだ。４０度超える日もあるんだよ。</p>
