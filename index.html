@@ -10,208 +10,164 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
     <style>
         /*CSSのエリア*/
-        body{
-    letter-spacing: 0.1em;
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
+        * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
 }
 
-/* PC・SPのオンオフ */
-.pc{
-    display: block;
-}
-.sp{
-    display: none;
-}
-@media (max-width: 767px){
-    .pc{
-        display: none !important;
-    }
-    .sp{
-        display: block;
-    }
+:root {
+     --nav-height: 10vh;
+     --nav-background: #ccc;
 }
 
-/* ヘッダー */
-header{
-    width: 100%;
-    padding: 10px 0;
-}
-.header_wrapper{
-    max-width: 1320px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.header_wrapper h1{
-    width: auto;
-    display: flex;
-    align-items: center;
-}
-.header_wrapper h1 a{
-    display: block;
-    color: #333;
-    text-decoration: none;
-    font-size: 34px;
-}
-.header_wrapper h1 span{
-    display: block;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 1.5;
-    margin-left: 10px;
-}
-.header_right{
-    display: flex;
-}
-@media (max-width: 767px){
-    header{
-        position: fixed;
-        top: 0;
-        z-index: 100;
-        padding: 0;
-        background-color: #fff;
-    }
+nav {
+     display: flex;
+     padding: 0 50px;
+     align-items: center;
+     width: 100%;
+     height: var(--nav-height);
+     background: var(--nav-background);
 }
 
-/* ナビゲーション */
-.gnav{
-    width: 100%;
-    background-color: #333;
+.logo h1 {
+     font-size: 20px;
+     font-weight: 600;
+     text-transform: uppercase;
+     letter-spacing: 3px;
 }
-.gnav_wrapper{
-    max-width: 980px;
-    margin: auto;
-    display: flex;
+
+/* nav-links */
+
+.nav-links {
+     display: flex;
+     height: var(--nav-height);
+     align-items: center;
+     margin-left: auto;
 }
-.gnav_wrapper li{
-    border-left: #888 1px solid;
-    text-align: center;
-    width: calc(100%/7);
-    transition: all  0.3s ease;
+
+.nav-links li {
+     list-style: none;
+     margin: 0 15px;
+     height: var(--nav-height);
+     line-height: var(--nav-height);
+     text-align: center;
 }
-.gnav_wrapper li:last-child{
-    border-right: #888 1px solid;
+
+.nav-links li a {
+     text-decoration: none;
+     color: rgb(99, 99, 99);
+     position: relative;
 }
-.gnav_wrapper li:hover{
-    background-color: #888;
+
+/* menu */
+
+.menu {
+     cursor: pointer;
+     background: var(--nav-background);
+     border: none;
+     outline: none;
+     display: none;
 }
-.gnav_wrapper li a{
-    display: block;
-    padding: 1.3em 0;
-    color: #fff;
-    text-decoration: none;
+
+.menu .bar {
+     width: 20px;
+     height: 2px;
+     background: #000;
+     border-radius: 5px;
+     opacity: 1;
+     visibility: visible;
+     transition: 0.5s ease;
+     transform-origin: left;
 }
-@media (max-width: 767px){
-    .gnav_wrapper{
-        position: fixed;
-        display: table;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #333;
-        visibility: hidden;
-        opacity: 0;
-        padding-top: 20%;
-    }
-    .gnav_wrapper li{
-        max-width: 300px;
-        margin: 0 auto;
-        text-align: center;
-        width: 100%;
-        border-bottom: #888 1px solid;
-        border-left: none;
-    }
-    .gnav_wrapper li:last-child{
-        border-right: none;
-    }
-    .menu-btn{
-        color: #fff;
-        cursor: pointer;
-        z-index: 100;
-        background-color: #333;
-        max-width: 56px;
-        width: 56px;
-    }
-    .menu-btn i{
-        display: block;
-        font-size: 24px;
-        text-align: center;
-        padding-top: 10px;
-    }
-    .menu-btn span{
-        display: block;
-        padding: 0 0 10px 0;
-        font-size: 10px;
-        text-align: center;
-    }
-    .open{
-        transition: all .5s;
-        visibility: visible;
-        opacity: 1;
-        z-index: 10;
-    }
-    .menu-btn span::after{
-        content: attr(data-txt-menu);
-    }
-    .open span::after{
-        content: attr(data-txt-close);
-    }
-    
+
+.menu .bar1 {
+     margin-bottom: 5px;
+}
+
+.menu .bar3 {
+     margin-top: 5px;
+}
+
+.menu.toggle .bar1 {
+     transform-origin: left;
+     transform: rotate(45deg);
+}
+
+.menu.toggle .bar2 {
+     opacity: 0;
+     visibility: hidden;
+}
+
+.menu.toggle .bar3 {
+     transform-origin: left;
+     transform: rotate(-45deg);
+}
+
+/* responsive */
+
+@media screen and (max-width: 700px) {
+     .nav-links {
+          flex-direction: column;
+          position: fixed;
+          top: 0;
+          left: 100%;
+          width: 300px;
+          height: 100%;
+          background: var(--nav-background);
+          margin-top: var(--nav-height);
+          transition: 0.5s ease-out;
+     }
+     .nav-links li {
+          height: var(--nav-height);
+          line-height: var(--nav-height);
+          text-align: center;
+          width: 100%;
+          display: block;
+     }
+     .menu {
+          display: block;
+          margin-left: auto;
+     }
+
+     .menu.toggle + .nav-links {
+          transform: translateX(-100%);
+     }
 }
 
     </style>
 </head>
 <body>
-    <!-- ヘッダー -->
-<header>
-    <div class="header_wrapper">
-        <h1>
-            <a href="#">SAMPLE</a>
-            <span>SAMPLE<br>ハンバーガーメニュー</span>
-        </h1>
-        <div class="header_right">
-            <!-- ドロワーボタン -->
-            <div class="menu-btn sp" id="js_btn">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-                <span class="menu" data-txt-menu="MENU" data-txt-close="CLOSE"></span>
-            </div>
-        </div>
-    </div>
-</header>
-<!-- ナビゲーション -->
-<nav class="gnav">
-    <ul class="gnav_wrapper">
-        <li><a href="#">ホーム</a></li>
-        <li><a href="#">メニュー1</a></li>
-        <li><a href="#">メニュー2</a></li>
-        <li><a href="#">メニュー3</a></li>
-        <li><a href="#">メニュー4</a></li>
-        <li><a href="#">メニュー5</a></li>
-        <li><a href="#">メニュー6</a></li>
-    </ul>
-</nav>
 
-    <!--コンテンツのエリア-->
+    <nav>
+         <div class="logo">
+              <h1>navbar</h1>
+         </div>
 
+         <div class="menu">
+              <div class="bar bar1"></div>
+              <div class="bar bar2"></div>
+              <div class="bar bar3"></div>
+         </div>
+
+         <ul class="nav-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Service</a></li>
+              <li><a href="#">Contact</a></li>
+         </ul>
+
+    </nav>
+
+    <script src="script.js"></script>
 
     <script>
 //javascriptのエリア
 //ハンバーガーメニュー
-$(function () {
-    var $body = $('.gnav_wrapper,.menu-btn');
+const menu = document.querySelector('.menu');
 
-    //開閉用ボタンをクリックでクラスの切替え
-    $('#js_btn').on('click', function () {
-        $body.toggleClass('open');
-    });
-
-    //メニュー名以外の部分をクリックで閉じる
-    $('a').on('click', function () {
-        $body.removeClass('open');
-    });
+menu.addEventListener('click', function() {
+     this.classList.toggle('toggle');
 });
     </script>
 </body>
