@@ -135,13 +135,27 @@ nav {
      }
 }
 
+.header{background-color: hotpink;}
+.main{background-color: lightpink;}
+.footer{background-color: hotpink;}
+.wrapper{
+     max-width: 900px;
+     margin: 0 auto;
+}
+
+.header,.main,.footer,img{width:100%;}
+body{margin:0;}
+
+
+
+
     </style>
 </head>
 <body>
 
     <nav>
          <div class="logo">
-              <h1>navbar</h1>
+              <h1>Media_Queries</h1>
          </div>
 
          <div class="menu">
@@ -151,13 +165,36 @@ nav {
          </div>
 
          <ul class="nav-links">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Service</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="NoM_Q.html">M_Qなし</a></li>
+              <li><a href="NoVP.html">VPなし</a></li>
+              <li><a href="NoM_QVP.html">M_Q・VPなし</a></li>
+              <li><a href="Comment.html">Comment</a></li>
          </ul>
 
     </nav>
+
+
+    <div class="wrapper">
+    <div>
+         <div class="header">
+              メディアクエリを使ってみた<br>
+              <br>
+         </div>
+    </div>
+    <div class="main">
+         *********<br>
+         <br>
+         <img src="IMG_6170.jpg"><br>
+         <br>
+         *********
+    </div>
+    <div class="footer">
+         なんだかよくわからなくなってきた…。
+    </div>
+    </div>
+
+
 
     <script src="script.js"></script>
 
